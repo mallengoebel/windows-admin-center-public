@@ -7,8 +7,8 @@ $DomainName = (Get-WmiObject Win32_ComputerSystem).Domain
 $WacUrl = "https://wac.$DomainName"
 
 # Content Vars
-$contentDirectory = "\\srvrcode\appcode\img\WindowsAdminCenter\Working Tree\"
-$contentFileName = "$guest-connection.csv"
+$contentDirectory = "\\path\to\shared\resource\"
+$contentFileName = "$guest.csv"
 
 #Create the content directory if it doesn't exist
 Write-Output "Creating Content Path if non-existent"
@@ -24,7 +24,7 @@ if (Test-Path $contentFilePath) {
 }
 
 # Set Path for initial source of truth
-$lastValueFile = "C:\nt\code\LastValue.txt"
+$lastValueFile = "C:\path\to\your\location\LastValue.txt"
 
 # Function to attain the value of the registry key
 function Get-RegistryValue {
